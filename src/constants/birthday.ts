@@ -30,13 +30,6 @@ export const VIDEOS = [
   { title: "Birthday Celebration", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4", poster: "https://picsum.photos/seed/v-1/800/450" },
   { title: "Coffee Date", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4", poster: "https://picsum.photos/seed/v-2/800/450" },
   { title: "Travel Memory", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4", poster: "https://picsum.photos/seed/v-3/800/450" },
-  { title: "Beach Walk", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4", poster: "https://picsum.photos/seed/v-4/800/450" },
-  { title: "Surprise Dinner", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4", poster: "https://picsum.photos/seed/v-5/800/450" },
-  { title: "Movie Night", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4", poster: "https://picsum.photos/seed/v-6/800/450" },
-  { title: "Love Notes", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4", poster: "https://picsum.photos/seed/v-7/800/450" },
-  { title: "Sunset Ride", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4", poster: "https://picsum.photos/seed/v-8/800/450" },
-  { title: "Birthday Cake", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4", poster: "https://picsum.photos/seed/v-9/800/450" },
-  { title: "Future Together", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4", poster: "https://picsum.photos/seed/v-10/800/450" },
 ];
 
 export const REASONS = [

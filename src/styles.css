@@ -79,8 +79,8 @@
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.78 0.15 20);
-  --primary-foreground: oklch(0.15 0.04 320);
+  --primary: oklch(0.40 0.18 15);
+  --primary-foreground: oklch(0.98 0.01 15);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -92,13 +92,13 @@
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
-  --rose: oklch(0.78 0.16 18);
-  --rose-soft: oklch(0.88 0.07 15);
-  --rose-gold: oklch(0.82 0.10 40);
-  --gold: oklch(0.86 0.14 85);
-  --cream: oklch(0.96 0.03 80);
-  --lavender: oklch(0.82 0.08 300);
-  --plum: oklch(0.32 0.10 320);
+  --rose: oklch(0.40 0.18 15);
+  --rose-soft: oklch(0.55 0.14 15);
+  --rose-gold: oklch(0.50 0.16 18);
+  --gold: oklch(0.55 0.18 18);
+  --cream: oklch(0.95 0.03 20);
+  --lavender: oklch(0.60 0.12 20);
+  --plum: oklch(0.20 0.10 15);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -155,7 +155,7 @@
   }
 
   body {
-    background: radial-gradient(ellipse at top, oklch(0.22 0.08 330) 0%, oklch(0.10 0.04 320) 60%, oklch(0.06 0.02 310) 100%);
+    background: radial-gradient(ellipse at top, oklch(0.22 0.10 15) 0%, oklch(0.12 0.06 10) 60%, oklch(0.06 0.03 5) 100%);
     color: var(--color-foreground);
     font-family: var(--font-body);
     min-height: 100vh;
@@ -176,14 +176,14 @@
 }
 
 @utility text-gold-gradient {
-  background: linear-gradient(135deg, oklch(0.92 0.10 85), oklch(0.78 0.16 35), oklch(0.92 0.10 85));
+  background: linear-gradient(135deg, oklch(0.60 0.14 20), oklch(0.40 0.20 15), oklch(0.60 0.14 20));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 @utility text-rose-gradient {
-  background: linear-gradient(135deg, oklch(0.92 0.08 20), oklch(0.78 0.16 18), oklch(0.86 0.10 350));
+  background: linear-gradient(135deg, oklch(0.65 0.12 20), oklch(0.40 0.20 15), oklch(0.60 0.14 18));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -191,16 +191,16 @@
 
 @utility btn-luxury {
   position: relative;
-  background: linear-gradient(135deg, oklch(0.86 0.14 35), oklch(0.78 0.18 18));
-  color: oklch(0.15 0.04 320);
+  background: linear-gradient(135deg, oklch(0.50 0.18 18), oklch(0.38 0.20 14));
+  color: oklch(0.98 0.01 15);
   padding: 0.95rem 2.4rem;
   border-radius: 999px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  box-shadow: 0 20px 50px -10px oklch(0.78 0.16 20 / 0.6), inset 0 1px 0 oklch(1 0 0 / 0.4);
+  box-shadow: 0 20px 50px -10px oklch(0.38 0.20 14 / 0.6), inset 0 1px 0 oklch(1 0 0 / 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-@utility btn-luxury { &:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 30px 70px -10px oklch(0.78 0.16 20 / 0.8), inset 0 1px 0 oklch(1 0 0 / 0.5); } }
+@utility btn-luxury { &:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 30px 70px -10px oklch(0.38 0.20 14 / 0.8), inset 0 1px 0 oklch(1 0 0 / 0.5); } }
 
 @keyframes float-up {
   0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }
