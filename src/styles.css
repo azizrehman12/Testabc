@@ -59,18 +59,28 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+  --color-rose-gold: var(--rose-gold);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-lavender: var(--lavender);
+  --color-plum: var(--plum);
+  --font-display: "Cormorant Garamond", serif;
+  --font-script: "Dancing Script", cursive;
+  --font-body: "Inter", sans-serif;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: oklch(0.13 0.04 320);
+  --foreground: oklch(0.97 0.02 30);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.78 0.15 20);
+  --primary-foreground: oklch(0.15 0.04 320);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
@@ -82,6 +92,13 @@
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
+  --rose: oklch(0.78 0.16 18);
+  --rose-soft: oklch(0.88 0.07 15);
+  --rose-gold: oklch(0.82 0.10 40);
+  --gold: oklch(0.86 0.14 85);
+  --cream: oklch(0.96 0.03 80);
+  --lavender: oklch(0.82 0.08 300);
+  --plum: oklch(0.32 0.10 320);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -138,7 +155,74 @@
   }
 
   body {
-    background-color: var(--color-background);
+    background: radial-gradient(ellipse at top, oklch(0.22 0.08 330) 0%, oklch(0.10 0.04 320) 60%, oklch(0.06 0.02 310) 100%);
     color: var(--color-foreground);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    overflow-x: hidden;
   }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
+}
+
+@utility font-script { font-family: var(--font-script); }
+@utility font-display { font-family: var(--font-display); }
+
+@utility glass {
+  background: linear-gradient(135deg, oklch(1 0 0 / 0.10), oklch(1 0 0 / 0.04));
+  backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid oklch(1 0 0 / 0.15);
+  box-shadow: 0 30px 80px -20px oklch(0 0 0 / 0.5), inset 0 1px 0 oklch(1 0 0 / 0.10);
+}
+
+@utility text-gold-gradient {
+  background: linear-gradient(135deg, oklch(0.92 0.10 85), oklch(0.78 0.16 35), oklch(0.92 0.10 85));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-rose-gradient {
+  background: linear-gradient(135deg, oklch(0.92 0.08 20), oklch(0.78 0.16 18), oklch(0.86 0.10 350));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility btn-luxury {
+  position: relative;
+  background: linear-gradient(135deg, oklch(0.86 0.14 35), oklch(0.78 0.18 18));
+  color: oklch(0.15 0.04 320);
+  padding: 0.95rem 2.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 20px 50px -10px oklch(0.78 0.16 20 / 0.6), inset 0 1px 0 oklch(1 0 0 / 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@utility btn-luxury { &:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 30px 70px -10px oklch(0.78 0.16 20 / 0.8), inset 0 1px 0 oklch(1 0 0 / 0.5); } }
+
+@keyframes float-up {
+  0% { transform: translateY(110vh) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% { transform: translateY(-10vh) translateX(40px) rotate(360deg); opacity: 0; }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.15); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.10); }
+}
+@keyframes aurora {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.45; }
+  50% { transform: translate(40px, -30px) scale(1.2); opacity: 0.7; }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
