@@ -13,11 +13,11 @@ export const TIMELINE = [
 ];
 
 export const GALLERY_PROMPTS = [
-  "couple-holding-hands","sunset-walk","coffee-date","flowers","gift","birthday-cake",
-  "heart-balloons","beach","mountains","sky-lanterns","roses","golden-lights","fairy-lights",
-  "picnic","night-drive","city-lights","rain-window","old-letters","candles","macarons",
-  "polaroids","vinyl-record","starry-sky","ferris-wheel","forest-walk","snow-flakes",
-  "champagne","handwritten-note","sunrise","dance-floor",
+  "couple-holding-hands", "sunset-walk", "coffee-date", "flowers", "gift", "birthday-cake",
+  "heart-balloons", "beach", "mountains", "sky-lanterns", "roses", "golden-lights", "fairy-lights",
+  "picnic", "night-drive", "city-lights", "rain-window", "old-letters", "candles", "macarons",
+  "polaroids", "vinyl-record", "starry-sky", "ferris-wheel", "forest-walk", "snow-flakes",
+  "champagne", "handwritten-note", "sunrise", "dance-floor",
 ];
 
 export const GALLERY = GALLERY_PROMPTS.map((seed, i) => ({
@@ -27,34 +27,35 @@ export const GALLERY = GALLERY_PROMPTS.map((seed, i) => ({
 }));
 
 export const VIDEOS = [
-  { title: "Birthday Celebration", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4", poster: "https://picsum.photos/seed/v-1/800/450" },
-  { title: "Coffee Date", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4", poster: "https://picsum.photos/seed/v-2/800/450" },
-  { title: "Travel Memory", src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4", poster: "https://picsum.photos/seed/v-3/800/450" },
+  { title: "Here everything revolve around you", src: "/vedios/1.mp4", },
+  { title: "Ahhhhh GoDDDDDDDD!!!!", src: "/vedios/2.mp4", },
+
+
 ];
 
 export const REASONS = [
-  "Your smile that resets my whole day","Your eyes when you tell a story","Your kindness, even to strangers",
-  "Your laugh — my favorite sound","Your unwavering support","Your honesty, always",
-  "Your hugs that fix everything","Your voice on a long evening","Your wild, beautiful dreams",
-  "Your heart, the gentlest place I know","The way you remember tiny details","Your handwriting on little notes",
-  "How you sing off-key with conviction","Your playlist taste","The way you say my name",
-  "Your patience with me","Your wit at 1 a.m.","Your morning hair",
-  "The way you cry at movies","Your taste in books","Your warm hands in winter",
-  "Your way with words","Your faith in us","Your fearless love",
-  "Your dance moves in the kitchen","Your sleepy texts","Your forehead kisses",
-  "Your courage on bad days","Your softness on quiet ones","Your fire on adventures",
-  "Your curiosity","Your generosity","Your loyalty",
-  "The way you listen","Your perfume","Your silly nicknames",
-  "Your random hugs","The way you hold my hand","Your art, in everything you do",
-  "Your tea-making ritual","Your obsession with sunsets","Your dimples",
-  "Your kindness to animals","Your stubborn hope","Your honesty in fights",
-  "The way you say goodnight","Your future-self plans","Your present-self magic",
-  "Your forever — promised to me","Simply, all of you ❤",
+  "Your smile that resets my whole day", "Your eyes when you tell a story", "Your kindness, even to strangers",
+  "Your laugh — my favorite sound", "Your unwavering support", "Your honesty, always",
+  "Your hugs that fix everything", "Your voice on a long evening", "Your wild, beautiful dreams",
+  "Your heart, the gentlest place I know", "The way you remember tiny details", "Your handwriting on little notes",
+  "How you sing off-key with conviction", "Your playlist taste", "The way you say my name",
+  "Your patience with me", "Your wit at 1 a.m.", "Your morning hair",
+  "The way you cry at movies", "Your taste in books", "Your warm hands in winter",
+  "Your way with words", "Your faith in us", "Your fearless love",
+  "Your dance moves in the kitchen", "Your sleepy texts", "Your forehead kisses",
+  "Your courage on bad days", "Your softness on quiet ones", "Your fire on adventures",
+  "Your curiosity", "Your generosity", "Your loyalty",
+  "The way you listen", "Your perfume", "Your silly nicknames",
+  "Your random hugs", "The way you hold my hand", "Your art, in everything you do",
+  "Your tea-making ritual", "Your obsession with sunsets", "Your dimples",
+  "Your kindness to animals", "Your stubborn hope", "Your honesty in fights",
+  "The way you say goodnight", "Your future-self plans", "Your present-self magic",
+  "Your forever — promised to me", "Simply, all of you ❤",
 ];
 
 export const FLOATING_NOTES = [
-  "I Love You ❤","Forever","Always Yours","Beautiful","My Princess","My Queen","My Everything",
-  "You're my home","Mine — every page","Cariño",
+  "I Love You ❤", "Forever", "Always Yours", "Beautiful", "My Princess", "My Queen", "My Everything",
+  "You're my home", "Mine — every page", "Cariño",
 ];
 
 export const MEMORY_BOOK = [
@@ -67,9 +68,9 @@ export const MEMORY_BOOK = [
 ];
 
 export const PLAYLIST = [
-  { title: "Soft Lullaby", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-  { title: "Sunset Waltz", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-  { title: "Our Slow Dance", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
-  { title: "Quiet Promises", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" },
-  { title: "Forever Yours", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" },
+  { title: "Bhool", src: "/audio/1.m4a" },
+  { title: "Ye Dill Thum Bin lagta Nahi", src: "/audio/2.m4a" },
+  { title: "Thumhi Meri Dewata", src: "/audio/3.m4a", startAt: 10 },
+  { title: "Teray Pyar mai sara Alam kho bhaitay hain", src: "/audio/4.m4a" },
+  { title: "Pal Pal", src: "/audio/5.m4a" },
 ];

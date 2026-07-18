@@ -8,7 +8,7 @@ import { FloatingNotes } from "./FloatingNotes";
 import { GiftBox } from "./GiftBox";
 import { Fireworks } from "./Fireworks";
 import { EasterEggs } from "./EasterEggs";
-import { MusicPlayer } from "./MusicPlayer";
+
 
 const Gallery = lazy(() => import("./Gallery").then((m) => ({ default: m.Gallery })));
 const VideoGallery = lazy(() => import("./VideoGallery").then((m) => ({ default: m.VideoGallery })));
@@ -43,7 +43,6 @@ export function Experience() {
         <p className="font-script text-2xl text-rose-200">Forever yours ❤</p>
         <p className="mt-2 text-xs uppercase tracking-[0.4em] text-white/40">made with love · just for you</p>
       </footer>
-      <MusicPlayer autoplay />
     </main>
   );
 }

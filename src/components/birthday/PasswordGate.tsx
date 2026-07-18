@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { HiLockClosed, HiLockOpen } from "react-icons/hi2";
+import { triggerMusicPlay } from "./MusicPlayer";
 
-const ANSWER = "happybirthdaymygirl";
+const ANSWERS = ["happybithdaymahmoona", "happybirthdaymahmoona"];
 const normalize = (v: string) => v.toLowerCase().replace(/\s+/g, "").trim();
 
 export function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
@@ -13,7 +14,8 @@ export function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (normalize(value) === ANSWER) {
+    if (ANSWERS.includes(normalize(value))) {
+      triggerMusicPlay();
       setUnlocking(true);
       setError(null);
       setTimeout(onUnlock, 1800);

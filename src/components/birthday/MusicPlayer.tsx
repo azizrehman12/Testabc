@@ -3,7 +3,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { HiPlay, HiPause, HiForward, HiBackward, HiSpeakerWave, HiSpeakerXMark, HiQueueList, HiXMark } from "react-icons/hi2";
 import { PLAYLIST } from "@/constants/birthday";
 
-export function MusicPlayer({ autoplay = false }: { autoplay?: boolean }) {
+let globalPlayTrigger: (() => void) | null = null;
+
+export function triggerMusicPlay() {
+  if (globalPlayTrigger) {
+    globalPlayTrigger();
+  }
+}
+
+export function MusicPlayer({ autoplay = false, visible = true }: { autoplay?: boolean; visible?: boolean }) {
   const ref = useRef<HTMLAudioElement>(null);
   const [idx, setIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
@@ -13,6 +21,17 @@ export function MusicPlayer({ autoplay = false }: { autoplay?: boolean }) {
   const [openList, setOpenList] = useState(false);
 
   const track = PLAYLIST[idx];
+
+  useEffect(() => {
+    globalPlayTrigger = () => {
+      const el = ref.current;
+      if (!el) return;
+      el.play().then(() => setPlaying(true)).catch((err) => console.log("Autoplay check:", err));
+    };
+    return () => {
+      globalPlayTrigger = null;
+    };
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -62,12 +81,9 @@ export function MusicPlayer({ autoplay = false }: { autoplay?: boolean }) {
   }, [idx]);
 
   return (
-    <div className="fixed inset-x-0 bottom-4 z-40 flex justify-center px-3">
+    <div className={`fixed inset-x-0 bottom-4 z-40 flex justify-center px-3 transition-all duration-700 ${visible ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none translate-y-12"}`}>
       <motion.div
         layout
-        initial={{ y: 80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.6 }}
         className="glass flex w-full max-w-2xl items-center gap-3 rounded-full px-3 py-2 md:gap-4 md:px-5 md:py-3"
       >
         <audio ref={ref} src={track.src} preload="metadata" />

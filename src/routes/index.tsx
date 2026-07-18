@@ -5,6 +5,7 @@ import { OpeningGate } from "@/components/birthday/OpeningGate";
 import { PasswordGate } from "@/components/birthday/PasswordGate";
 import { ParticleField } from "@/components/birthday/Particles";
 import { Experience } from "@/components/birthday/Experience";
+import { MusicPlayer } from "@/components/birthday/MusicPlayer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,6 +60,13 @@ function Index() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {stage !== "opening" && (
+        <MusicPlayer
+          autoplay={stage === "experience"}
+          visible={stage === "experience"}
+        />
+      )}
     </div>
   );
 }
