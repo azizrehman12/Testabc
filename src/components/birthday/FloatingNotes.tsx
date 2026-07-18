@@ -30,8 +30,8 @@ export function FloatingNotes() {
             exit={{ opacity: 0 }}
             transition={{ duration: n.duration, ease: "easeOut" }}
             onAnimationComplete={() => setNotes((c) => c.filter((x) => x.id !== n.id))}
-            className="absolute bottom-0 font-script text-xl text-rose-200/90 md:text-2xl"
-            style={{ left: `${n.x}%`, textShadow: "0 0 20px oklch(0.78 0.16 18 / 0.6)" }}
+            className="absolute bottom-0 font-script text-xl text-rose-200/80 md:text-2xl drop-shadow-sm will-change-transform"
+            style={{ left: `${n.x}%`, transform: "translateZ(0)" }}
           >
             {n.text}
           </motion.span>
