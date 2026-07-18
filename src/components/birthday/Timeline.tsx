@@ -26,9 +26,7 @@ export function Timeline() {
                   className="h-full w-full object-cover transition-transform duration-[1600ms] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <span className="absolute left-4 top-4 rounded-full bg-white/10 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-white backdrop-blur-md">
-                  {item.date}
-                </span>
+
               </div>
               <div className="p-6">
                 <h3 className="font-display text-2xl text-rose-gradient">{item.title}</h3>
