@@ -13,7 +13,7 @@ import { OpenWhenLetters } from "./OpenWhenLetters";
 import { BucketList } from "./BucketList";
 import { StarMap } from "./StarMap";
 import { MoonPhases } from "./MoonPhases";
-import { HeartbeatSync } from "./HeartbeatSync";
+
 import { RecordPlayer } from "./RecordPlayer";
 
 
@@ -32,7 +32,7 @@ export function Experience() {
       <EasterEggs />
       <Hero />
       <LoveCounter />
-      <HeartbeatSync />
+
       <StarMap />
       <MoonPhases />
       <DistanceMap />

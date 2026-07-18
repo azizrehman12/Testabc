@@ -44,42 +44,42 @@ export function ParticleField({ density = 1 }: { density?: number }) {
   );
 
   return (
-    <div className="pointer-events-none fixed inset-0 overflow-hidden z-0">
+    <div className="pointer-events-none fixed inset-0 overflow-hidden z-0" style={{ transform: "translateZ(0)" }}>
       {/* Aurora glows */}
       <div
-        className="absolute -top-40 -left-40 h-[60vmax] w-[60vmax] rounded-full blur-3xl"
+        className="absolute -top-40 -left-40 h-[60vmax] w-[60vmax] rounded-full blur-3xl opacity-50 md:opacity-100 will-change-transform"
         style={{
           background: "radial-gradient(circle, oklch(0.78 0.16 18 / 0.35), transparent 70%)",
           animation: "aurora 14s ease-in-out infinite",
         }}
       />
       <div
-        className="absolute -bottom-40 -right-40 h-[55vmax] w-[55vmax] rounded-full blur-3xl"
+        className="absolute -bottom-40 -right-40 h-[55vmax] w-[55vmax] rounded-full blur-3xl opacity-50 md:opacity-100 will-change-transform"
         style={{
           background: "radial-gradient(circle, oklch(0.82 0.10 300 / 0.35), transparent 70%)",
           animation: "aurora 18s ease-in-out infinite reverse",
         }}
       />
       <div
-        className="absolute top-1/3 left-1/2 h-[40vmax] w-[40vmax] -translate-x-1/2 rounded-full blur-3xl"
+        className="absolute top-1/3 left-1/2 h-[40vmax] w-[40vmax] -translate-x-1/2 rounded-full blur-3xl opacity-50 md:opacity-100 will-change-transform"
         style={{
           background: "radial-gradient(circle, oklch(0.86 0.14 85 / 0.22), transparent 70%)",
           animation: "aurora 22s ease-in-out infinite",
         }}
       />
 
-      {/* Stars */}
+      {/* Stars - Removed expensive box-shadow for mobile perf */}
       {stars.map((s) => (
         <span
           key={`s-${s.id}`}
-          className="absolute rounded-full bg-white"
+          className="absolute rounded-full bg-white/80"
           style={{
             left: `${s.x}%`,
             top: `${s.y}%`,
             width: s.size,
             height: s.size,
-            boxShadow: `0 0 ${s.size * 3}px oklch(1 0 0 / 0.7)`,
             animation: `twinkle ${s.duration}s ease-in-out ${s.delay}s infinite`,
+            willChange: "opacity"
           }}
         />
       ))}
@@ -88,28 +88,27 @@ export function ParticleField({ density = 1 }: { density?: number }) {
       {petals.map((p) => (
         <span
           key={`p-${p.id}`}
-          className="absolute bottom-0 rounded-[50%_20%_50%_20%]"
+          className="absolute bottom-0 rounded-[50%_20%_50%_20%] will-change-transform"
           style={{
             left: `${p.x}%`,
             width: p.size,
             height: p.size * 0.7,
-            background: `radial-gradient(circle at 30% 30%, ${p.hue}, transparent 80%)`,
-            opacity: 0.7,
+            background: p.hue, // Removed expensive radial gradient
+            opacity: 0.5,
             animation: `float-up ${p.duration}s linear ${p.delay}s infinite`,
           }}
         />
       ))}
 
-      {/* Hearts */}
+      {/* Hearts - Removed drop-shadow */}
       {hearts.map((h) => (
         <span
           key={`h-${h.id}`}
-          className="absolute bottom-0 text-rose-300/70"
+          className="absolute bottom-0 text-rose-300/60 will-change-transform"
           style={{
             left: `${h.x}%`,
             fontSize: h.size,
             animation: `float-up ${h.duration}s linear ${h.delay}s infinite`,
-            filter: "drop-shadow(0 0 6px oklch(0.78 0.16 18 / 0.7))",
           }}
         >
           ❤

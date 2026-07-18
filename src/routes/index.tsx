@@ -75,7 +75,6 @@ function Index() {
           onClick={logout}
           className="fixed top-6 right-24 z-50 flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition-all hover:bg-white/20 hover:text-white active:scale-95"
           style={{
-            backdropFilter: "blur(12px)",
             boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
           }}
         >

@@ -35,11 +35,9 @@ export function MemoryBook() {
           {MEMORY_BOOK.map((p, i) => (
             <SwiperSlide key={i}>
               <div
-                className="grid overflow-hidden rounded-3xl md:grid-cols-2 ring-1 ring-white/15 relative group"
+                className="grid overflow-hidden rounded-3xl md:grid-cols-2 ring-1 ring-white/15 relative group md:backdrop-blur-md"
                 style={{
-                  background: "linear-gradient(135deg, oklch(0.22 0.12 320 / 0.8), oklch(0.15 0.08 290 / 0.95))",
-                  backdropFilter: "blur(12px)",
-                  WebkitBackdropFilter: "blur(12px)",
+                  background: "linear-gradient(135deg, oklch(0.22 0.12 320 / 0.85), oklch(0.15 0.08 290 / 0.98))",
                   boxShadow: "0 30px 60px -15px rgba(0,0,0,0.9), inset 0 1px 0 rgba(255,255,255,0.2)",
                   transform: "translateZ(0)",
                   willChange: "transform",
