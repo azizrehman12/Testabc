@@ -32,13 +32,15 @@ export function Letter() {
             <Typewriter
               options={{ delay: 30, cursor: "" }}
               onInit={(tw) => {
-                tw.typeString("On this day the world celebrates you — but I get to do it every single day.")
+                tw.typeString("Life is measured in years, but remembered in moments.")
                   .pauseFor(500).typeString("<br/>")
-                  .typeString("Thank you for your laugh, your hands, your stubborn hope.")
+                  .typeString("And somehow, the moments that carry your presence always feel a little closer to forever.")
                   .pauseFor(500).typeString("<br/>")
-                  .typeString("Thank you for being the bravest, softest, most beautiful chapter of my life.")
+                  .typeString("Maybe love isn't about changing someone's world.")
+                  .pauseFor(500).typeString("<br/>")
+                  .typeString("Maybe it's about helping them see the beauty that was already there.")
                   .pauseFor(500).typeString("<br/><br/>")
-                  .typeString("If forever has a face — it's yours.")
+                  .typeString("If souls leave fingerprints, you've left yours on mine.")
                   .start();
               }}
             />
