@@ -13,13 +13,13 @@ export function Gallery() {
 
   const share = async (src: string, caption: string) => {
     const data = { title: "Our memory", text: caption, url: src };
-    if (navigator.share) { try { await navigator.share(data); } catch {} }
-    else { try { await navigator.clipboard.writeText(src); } catch {} }
+    if (navigator.share) { try { await navigator.share(data); } catch { } }
+    else { try { await navigator.clipboard.writeText(src); } catch { } }
   };
 
   return (
     <section className="relative z-10 px-6 py-24">
-      <SectionHeading eyebrow="Memory gallery" title="Frames of us" subtitle="Tap any frame to step inside the moment." />
+      <SectionHeading eyebrow="Memory gallery" title="Frames that all belongs to you" subtitle="Tap any frame to step inside the moment." />
 
       <PhotoProvider maskOpacity={0.92} bannerVisible={false}>
         <div className="mx-auto mt-16 grid max-w-7xl grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">

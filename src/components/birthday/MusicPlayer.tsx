@@ -86,7 +86,16 @@ export function MusicPlayer({ autoplay = false, visible = true }: { autoplay?: b
         layout
         className="glass flex w-full max-w-2xl items-center gap-3 rounded-full px-3 py-2 md:gap-4 md:px-5 md:py-3"
       >
-        <audio ref={ref} src={track.src} preload="metadata" />
+        <audio
+          ref={ref}
+          src={track.src}
+          preload="metadata"
+          onLoadedMetadata={(e) => {
+            if ("startAt" in track && typeof track.startAt === "number") {
+              e.currentTarget.currentTime = track.startAt;
+            }
+          }}
+        />
         <button onClick={prev} aria-label="Previous" className="grid h-9 w-9 place-items-center rounded-full text-white/80 transition hover:text-white">
           <HiBackward className="h-5 w-5" />
         </button>

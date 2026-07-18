@@ -1,36 +1,51 @@
 /** Single source of truth for the experience content. Replace freely — no code changes needed. */
 
-export const TOGETHER_SINCE = "2023-02-14T18:30:00";
+export const TOGETHER_SINCE = "2025-09-14T00:00:00";
 
 export const TIMELINE = [
-  { date: "Feb 14, 2023", title: "First Meeting", text: "The very first time I saw your smile — and the world shifted.", img: "https://picsum.photos/seed/love-1/800/600" },
-  { date: "Feb 20, 2023", title: "First Conversation", text: "We talked till sunrise. I still remember every word.", img: "https://picsum.photos/seed/love-2/800/600" },
-  { date: "Mar 03, 2023", title: "First Selfie", text: "Two strangers, one frame, infinite tomorrows.", img: "https://picsum.photos/seed/love-3/800/600" },
-  { date: "May 18, 2023", title: "Our Favorite Memory", text: "Rain, your laugh, a shared umbrella. Cinema-grade joy.", img: "https://picsum.photos/seed/love-4/800/600" },
-  { date: "Aug 02, 2023", title: "First Gift", text: "A tiny rose that said everything I couldn't.", img: "https://picsum.photos/seed/love-5/800/600" },
-  { date: "Dec 25, 2023", title: "Beautiful Moments", text: "Fairy lights, your eyes — same sparkle.", img: "https://picsum.photos/seed/love-6/800/600" },
-  { date: "Forever", title: "Our Future", text: "Mornings, mountains, mischief — all with you.", img: "https://picsum.photos/seed/love-7/800/600" },
+  {
+    title: "The Smile",
+    text: "The smile that quietly became my favorite place.",
+    img: "/assets/06.jpeg",
+  },
+  {
+    title: "Grace in Every Frame",
+    text: "Some people don't need a pose they simply carry elegance.And thats you   ",
+    img: "/assets/04.jpeg",
+  },
+  {
+    title: "Eyes That Speak",
+    text: "A thousand stories hidden behind one beautiful glance.",
+    img: "/assets/02.jpeg",
+  },
+  {
+    title: "Effortlessly Beautiful",
+    text: "Some moments become unforgettable simply because you're in them.",
+    img: "/assets/08.jpeg",
+  },
+  {
+    title: "Like a Blooming Rose",
+    text: "Soft, graceful, and beautiful in the quietest way.",
+    img: "/assets/05.jpeg",
+  },
+  {
+    title: "A Moment Worth Keeping",
+    text: "Not every picture needs a reason. Some are simply meant to be remembered.",
+    img: "/assets/01.jpeg",
+  },
 ];
+export const GALLERY = Array.from({ length: 14 }, (_, i) => {
+  const num = String(i + 1).padStart(2, "0");
+  return {
+    id: i,
+    src: `/assets/${num}.jpeg`,
+    caption: `Beautiful Memory ${num}`,
+  };
+});
 
-export const GALLERY_PROMPTS = [
-  "couple-holding-hands", "sunset-walk", "coffee-date", "flowers", "gift", "birthday-cake",
-  "heart-balloons", "beach", "mountains", "sky-lanterns", "roses", "golden-lights", "fairy-lights",
-  "picnic", "night-drive", "city-lights", "rain-window", "old-letters", "candles", "macarons",
-  "polaroids", "vinyl-record", "starry-sky", "ferris-wheel", "forest-walk", "snow-flakes",
-  "champagne", "handwritten-note", "sunrise", "dance-floor",
-];
-
-export const GALLERY = GALLERY_PROMPTS.map((seed, i) => ({
-  id: i,
-  src: `https://picsum.photos/seed/bday-${seed}/900/${i % 3 === 0 ? 1200 : 900}`,
-  caption: seed.replace(/-/g, " "),
-}));
-
-export const VIDEOS = [
-  { title: "Here everything revolve around you", src: "/vedios/1.mp4", },
+export const VIDEOS: { title: string; src: string; poster?: string }[] = [
+  { title: "Here everything revolve around you  ", src: "/vedios/1.mp4", },
   { title: "Ahhhhh GoDDDDDDDD!!!!", src: "/vedios/2.mp4", },
-
-
 ];
 
 export const REASONS = [
@@ -59,18 +74,14 @@ export const FLOATING_NOTES = [
 ];
 
 export const MEMORY_BOOK = [
-  { date: "Day 001", title: "Hello, You.", text: "The very first chapter — and the rest writes itself.", img: "https://picsum.photos/seed/book-1/700/900" },
-  { date: "Day 047", title: "The Long Walk", text: "We didn't notice the rain. We never do.", img: "https://picsum.photos/seed/book-2/700/900" },
-  { date: "Day 112", title: "Coffee, Always", text: "Two cups. Same order. Different stories every time.", img: "https://picsum.photos/seed/book-3/700/900" },
-  { date: "Day 233", title: "City of Lights", text: "You called every streetlight romantic. They were.", img: "https://picsum.photos/seed/book-4/700/900" },
-  { date: "Day 365", title: "One Year, Infinite Us", text: "A year felt like an evening. An evening felt like home.", img: "https://picsum.photos/seed/book-5/700/900" },
-  { date: "Today", title: "Happy Birthday, My Love", text: "This page is yours. So is the next. So is forever.", img: "https://picsum.photos/seed/book-6/700/900" },
+  { date: "Day 001", title: "Hello, You.", text: "The very first chapter — and the rest writes itself.", img: "/assets/06.jpeg" },
+  { date: "Today", title: "Happy Birthday, My Love", text: "This page is yours. So is the next. So is forever.", img: "/assets/13.jpeg" },
 ];
 
 export const PLAYLIST = [
   { title: "Bhool", src: "/audio/1.m4a" },
   { title: "Ye Dill Thum Bin lagta Nahi", src: "/audio/2.m4a" },
-  { title: "Thumhi Meri Dewata", src: "/audio/3.m4a", startAt: 10 },
+  { title: "Thumhi Meri Dewata", src: "/audio/3.m4a", startAt: 11 },
   { title: "Teray Pyar mai sara Alam kho bhaitay hain", src: "/audio/4.m4a" },
   { title: "Pal Pal", src: "/audio/5.m4a" },
 ];

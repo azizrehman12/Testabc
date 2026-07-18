@@ -105,7 +105,7 @@ export function GiftBox() {
             transition={{ delay: 1, duration: 1 }}
             className="mx-auto mt-10 max-w-xl text-center"
           >
-            <h3 className="font-display text-3xl text-gold-gradient md:text-4xl">Happy Birthday My Love ❤</h3>
+            <h3 className="font-display text-3xl text-gold-gradient md:text-4xl">Happy Birthday Maimoona ❤</h3>
             <p className="mt-4 text-white/75">I hope this little surprise reminds you how much you mean to me.</p>
           </motion.div>
         )}

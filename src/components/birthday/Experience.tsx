@@ -41,7 +41,7 @@ export function Experience() {
       <Fireworks />
       <footer className="relative z-10 px-6 pb-32 pt-10 text-center">
         <p className="font-script text-2xl text-rose-200">Forever yours ❤</p>
-        <p className="mt-2 text-xs uppercase tracking-[0.4em] text-white/40">made with love · just for you</p>
+
       </footer>
     </main>
   );

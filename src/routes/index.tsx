@@ -6,6 +6,7 @@ import { PasswordGate } from "@/components/birthday/PasswordGate";
 import { ParticleField } from "@/components/birthday/Particles";
 import { Experience } from "@/components/birthday/Experience";
 import { MusicPlayer } from "@/components/birthday/MusicPlayer";
+import { HiArrowRightOnRectangle } from "react-icons/hi2";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,6 +44,12 @@ function Index() {
     setStage("experience");
   };
 
+  const logout = () => {
+    sessionStorage.removeItem("bday:unlocked");
+    sessionStorage.removeItem("bday:begun");
+    setStage("opening");
+  };
+
   return (
     <div className="relative min-h-screen">
       {stage !== "opening" && <ParticleField density={stage === "experience" ? 1.2 : 0.7} />}
@@ -60,6 +67,23 @@ function Index() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {stage === "experience" && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          onClick={logout}
+          className="fixed top-6 right-24 z-50 flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/80 transition-all hover:bg-white/20 hover:text-white active:scale-95"
+          style={{
+            backdropFilter: "blur(12px)",
+            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <HiArrowRightOnRectangle className="h-4 w-4" />
+          <span>Logout</span>
+        </motion.button>
+      )}
 
       {stage !== "opening" && (
         <MusicPlayer
