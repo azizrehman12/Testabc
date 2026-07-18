@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { HiLockClosed, HiLockOpen } from "react-icons/hi2";
-import { triggerMusicPlay } from "./MusicPlayer";
 
 const ANSWERS = ["happybithdaymahmoona", "happybirthdaymahmoona"];
 const normalize = (v: string) => v.toLowerCase().replace(/\s+/g, "").trim();
@@ -15,7 +14,6 @@ export function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     if (ANSWERS.includes(normalize(value))) {
-      triggerMusicPlay();
       setUnlocking(true);
       setError(null);
       setTimeout(onUnlock, 1800);
@@ -36,19 +34,20 @@ export function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
         className="glass relative w-full max-w-md rounded-3xl p-10 text-center"
       >
         <motion.div
-          animate={{ rotate: unlocking ? [0, -12, 0] : 0, scale: unlocking ? [1, 1.3, 1] : 1 }}
+          animate={{ rotate: unlocking ? [0, -12, 0] : 0, scale: unlocking ? [1, 1.2, 1] : 1 }}
           transition={{ duration: 1.4 }}
-          className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full"
+          className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full"
           style={{
-            background: "linear-gradient(135deg, oklch(0.86 0.14 35), oklch(0.78 0.16 18))",
-            boxShadow: "0 20px 50px -10px oklch(0.78 0.16 20 / 0.6)",
+            background: "linear-gradient(135deg, oklch(0.65 0.25 10), oklch(0.40 0.20 15))",
+            boxShadow: "0 20px 50px -10px oklch(0.55 0.25 10 / 0.8), inset 0 2px 0 oklch(1 0 0 / 0.4)",
+            border: "1px solid oklch(0.80 0.18 80 / 0.3)"
           }}
         >
-          {unlocking ? <HiLockOpen className="h-9 w-9 text-white" /> : <HiLockClosed className="h-9 w-9 text-white" />}
+          {unlocking ? <HiLockOpen className="h-10 w-10 text-rose-100" /> : <HiLockClosed className="h-10 w-10 text-rose-100" />}
         </motion.div>
 
-        <h2 className="font-display text-3xl text-rose-gradient">A Little Secret</h2>
-        <p className="mt-2 text-sm text-white/70">Whisper the password only we know.</p>
+        <h2 className="font-display text-4xl text-transparent bg-clip-text bg-gradient-to-br from-white to-rose-200 drop-shadow-sm">A Little Secret</h2>
+        <p className="mt-3 text-sm text-rose-100/70 font-light tracking-wide">Whisper the password only we know.</p>
 
         <input
           autoFocus
@@ -56,7 +55,7 @@ export function PasswordGate({ onUnlock }: { onUnlock: () => void }) {
           value={value}
           onChange={(e) => { setValue(e.target.value); setError(null); }}
           placeholder="Enter Our Secret Password ❤"
-          className="mt-6 w-full rounded-full border border-white/20 bg-white/5 px-6 py-3 text-center text-white placeholder-white/50 outline-none transition focus:border-rose/60 focus:bg-white/10"
+          className="mt-8 w-full rounded-full border border-rose-500/30 bg-rose-950/20 px-6 py-4 text-center text-rose-50 placeholder-rose-200/40 outline-none transition-all focus:border-rose-400/60 focus:bg-rose-950/40 focus:ring-4 focus:ring-rose-500/10"
           aria-label="Secret password"
         />
 

@@ -35,21 +35,24 @@ export function MemoryBook() {
           {MEMORY_BOOK.map((p, i) => (
             <SwiperSlide key={i}>
               <div
-                className="grid overflow-hidden rounded-3xl md:grid-cols-2"
+                className="grid overflow-hidden rounded-3xl md:grid-cols-2 ring-1 ring-white/15 relative group"
                 style={{
-                  background: "linear-gradient(180deg, #fbf5e8, #efdcb8)",
-                  color: "#3a2415",
-                  boxShadow: "0 60px 140px -20px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.6)",
+                  background: "linear-gradient(135deg, oklch(0.22 0.12 320 / 0.8), oklch(0.15 0.08 290 / 0.95))",
+                  backdropFilter: "blur(24px)",
+                  boxShadow: "0 40px 80px -20px rgba(0,0,0,0.9), inset 0 1px 0 rgba(255,255,255,0.2)",
                 }}
               >
-                <div className="relative aspect-[4/5] md:aspect-auto">
-                  <img src={p.img} alt={p.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#efdcb8]" />
+                <div className="relative aspect-[4/5] md:aspect-auto overflow-hidden">
+                  <img src={p.img} alt={p.title} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-[3000ms] group-hover:scale-110" />
+                  {/* Seamless fade out to the background color */}
+                  <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-transparent via-transparent to-[oklch(0.15_0.08_290)]" />
+                  {/* Subtle warm glow over the image */}
+                  <div className="absolute inset-0 bg-rose-500/10 mix-blend-overlay" />
                 </div>
-                <div className="flex flex-col justify-center p-10 md:p-14">
-                  <span className="text-xs uppercase tracking-[0.4em] text-[#7a2638]/80">{p.date}</span>
-                  <h3 className="mt-4 font-display text-4xl text-[#7a2638]">{p.title}</h3>
-                  <p className="mt-4 font-script text-2xl leading-relaxed">{p.text}</p>
+                <div className="flex flex-col justify-center p-10 md:p-14 relative z-10 bg-gradient-to-t md:bg-gradient-to-r from-[oklch(0.15_0.08_290)] via-[oklch(0.15_0.08_290)/0.8] to-transparent">
+                  <span className="text-xs uppercase tracking-[0.4em] text-rose-300 font-bold tracking-widest">{p.date}</span>
+                  <h3 className="mt-4 font-display text-4xl text-transparent bg-clip-text bg-gradient-to-br from-white to-rose-200 drop-shadow-sm">{p.title}</h3>
+                  <p className="mt-5 font-script text-[1.6rem] leading-relaxed text-rose-100/90 font-light drop-shadow-sm">{p.text}</p>
                 </div>
               </div>
             </SwiperSlide>

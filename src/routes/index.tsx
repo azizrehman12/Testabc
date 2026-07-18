@@ -5,7 +5,6 @@ import { OpeningGate } from "@/components/birthday/OpeningGate";
 import { PasswordGate } from "@/components/birthday/PasswordGate";
 import { ParticleField } from "@/components/birthday/Particles";
 import { Experience } from "@/components/birthday/Experience";
-import { MusicPlayer } from "@/components/birthday/MusicPlayer";
 import { HiArrowRightOnRectangle } from "react-icons/hi2";
 
 export const Route = createFileRoute("/")({
@@ -83,13 +82,6 @@ function Index() {
           <HiArrowRightOnRectangle className="h-4 w-4" />
           <span>Logout</span>
         </motion.button>
-      )}
-
-      {stage !== "opening" && (
-        <MusicPlayer
-          autoplay={stage === "experience"}
-          visible={stage === "experience"}
-        />
       )}
     </div>
   );
